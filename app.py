@@ -26,7 +26,7 @@ def generate_url():
             ExpiresIn=expires_in
         )
 
-        return jsonify({'url': url})
+        return jsonify({'url': url}), 200
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
