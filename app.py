@@ -26,12 +26,10 @@ def generate_url():
             ExpiresIn=expires_in
         )
 
-        print(f"Generated Pre-signed URL: {url}")  # 🔍 debug
-        return jsonify({'url': url}), 200
+        return jsonify({"url": url}), 200
 
     except Exception as e:
-        print(f"Error: {str(e)}")  # 🔍 debug
-        return jsonify({'error': str(e)}), 500
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)
